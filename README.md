@@ -10,14 +10,14 @@
 ### Consumer:
 - Сервис подписан на топик metrics-topic и получает оттуда список отправленных Producer метрик.
 - Метрики сохраняются в базу данных для дальнейшего анализа.
-- При отправке GET запроса на /api/v1/metrics сервер отдает список всех метрик из БД с их количественными показателями.э
+- При отправке GET запроса на /api/v1/metrics сервер отдает список всех метрик из БД с их количественными показателями.
 - При отправке GET запроса на /api/v1/metrics/{id} сервер отадает конкретную метрику с ее количественными показателями.
 - Страница с документацией Swagger будет доступна по ссылке: http://localhost:8082/swagger-ui/index.html
 
 ## Использованные технологии
 - Java
 - Gradle
-- Spring Boot, Spring Security, Spring Data JPA, Spring Kafka, Spring Actuator
+- Spring Boot, Spring Security, Sping Web, Spring Data JPA, Spring Kafka, Spring Actuator
 - Kafka
 - PostgreSQL
 - Swagger
@@ -27,6 +27,10 @@
 - Склонировать репозиторий 
 ```
 git clone https://github.com/lordphiluren/kafka-app
+```
+- Перейти в папку с проектом
+```
+cd kafka-app
 ```
 - Запустить приложение
 ```
