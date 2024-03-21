@@ -5,6 +5,7 @@
 ### Producer:
 - Сервис поддерживает аутентификацию и авторизацию пользователей по логину и паролю.
 - Доступ к API аутентифицирован с помощью JWT токена.
+- Схема базы данных создается при помощи Liquibase.
 - При отправке POST запроса на /api/v1/metrics приложение собирает свои Gauge метрики с помощью Spring Actuator и отправляет их в Apache Kafka в топик metrics-topic.
 - Страница с документацией Swagger будет доступна по ссылке: http://localhost:8081/swagger-ui/index.html
 ### Consumer:
@@ -12,6 +13,7 @@
 - Метрики сохраняются в базу данных для дальнейшего анализа.
 - При отправке GET запроса на /api/v1/metrics сервер отдает список всех метрик из БД с их количественными показателями.
 - При отправке GET запроса на /api/v1/metrics/{id} сервер отадает конкретную метрику с ее количественными показателями.
+- Схема базы данных создается при помощи Liquibase.
 - Страница с документацией Swagger будет доступна по ссылке: http://localhost:8082/swagger-ui/index.html
 
 ## Использованные технологии
@@ -20,6 +22,7 @@
 - Spring Boot, Spring Security, Sping Web, Spring Data JPA, Spring Kafka, Spring Actuator
 - Kafka
 - PostgreSQL
+- Liquibase
 - Swagger
 - Docker - контейнеры, образы, volumes, написание Dockerfile, Docker Compose
 
