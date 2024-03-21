@@ -38,13 +38,13 @@
 - При отправке GET запроса на /api/v1/metrics/{id} сервер отадает конкретную метрику с ее количественными показателями.
 *Ответ*
 ```javascript
-  {
-    "id" : long,
-    "name" : string,
-    "description" : string,
-    "baseUnit"    : string,
-    "values" : double[]
-  }
+{
+  "id" : long,
+  "name" : string,
+  "description" : string,
+  "baseUnit"    : string,
+  "values" : double[]
+}
 ```
 - Схема базы данных создается при помощи Liquibase.
 - Страница с документацией Swagger будет доступна по ссылке: http://localhost:8082/swagger-ui/index.html
