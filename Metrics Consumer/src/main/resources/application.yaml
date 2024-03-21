@@ -1,0 +1,34 @@
+spring:
+  application:
+   name: Metrics Consumer
+  kafka:
+    bootstrap-servers: kafka:29092
+    consumer:
+     group-id: "metrics-1"
+     auto-offset-reset: earliest
+     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+     value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+     properties:
+       spring:
+         json:
+           trusted:
+             packages: '*'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/consumer_db
+    username: postgres
+    password: qwerty
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 8
+  liquibase:
+    change-log: db/changelog/main-changelog.xml
+server:
+  port: 8082
+topic:
+  send-metrics: metrics-topic
